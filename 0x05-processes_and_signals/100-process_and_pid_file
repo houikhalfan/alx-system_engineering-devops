@@ -12,9 +12,9 @@ terminator() {
 
 echo "$$" > /var/run/myscript.pid
 
-trap 'echo "Y U no love me?!"' SIGINT
 trap 'echo "I hate the kill command"' SIGTERM
-trap 'terminator' SIGQUIT
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'terminator' SIGQUIT SIGTERM
 
 while true; do
     echo "To infinity and beyond"
